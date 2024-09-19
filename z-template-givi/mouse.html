@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-barang {
+            --accent-color: #ffd426;
+            position: relative;
+            width: 240px;
+            background: white;
+            border-radius: 1rem;
+            padding: 0.3rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 50px 30px -20px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .card-barang .image-container {
+            position: relative;
+            width: 100%;
+            height: 130px;
+            border-radius: 0.7rem;
+            border-top-right-radius: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-barang .image-container img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+
+        .card-barang .image-container .img {
+            height: 100%;
+            width: 100%;
+            border-radius: inherit;
+        }
+
+        .card-barang .favorite {
+            position: absolute;
+            width: 19px;
+            height: 19px;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+
+        .card-barang .favorite input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .card-barang .favorite input:checked~svg {
+            animation: bouncing 0.5s;
+            fill: rgb(255, 95, 95);
+            filter: drop-shadow(0px 3px 1px rgba(53, 53, 53, 0.14));
+        }
+
+        .card-barang .favorite svg {
+            fill: #a8a8a8;
+        }
+
+        .card-barang .content {
+            padding: 0px 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-barang .content .category {
+            font-weight: 900;
+            color: #a6a6a6;
+        }
+
+        .card-barang .content .item-name {
+            font-weight: 700;
+            color: #666666;
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+        }
+
+
+        .card-barang .button-container {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .card-barang .button-container .button {
+            border-radius: 1.4rem 1.4rem 0.7rem 0.7rem;
+            border: none;
+            padding: 0.5rem 0;
+            background: var(--accent-color);
+            color: white;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .card-barang .button-container .button:hover {
+            background: orangered;
+        }
+
+        .card-barang .button-container .readmore {
+            flex: auto;
+        }
+
+        .card-barang:hover {
+            transform: scale(1.03);
+        }
+
+        @keyframes bouncing {
+
+            from,
+            to {
+                transform: scale(1, 1);
+            }
+
+            25% {
+                transform: scale(1.5, 2.1);
+            }
+
+            50% {
+                transform: scale(2.1, 1.5);
+            }
+
+            75% {
+                transform: scale(1.5, 2.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-barang">
+        <div class="image-container">
+            <img src="images/person_3.jpg" alt="">
+        </div>
+        <label class="favorite">
+            <input checked="" type="checkbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000">
+                <path
+                    d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z">
+                </path>
+            </svg>
+        </label>
+
+        <div class="content">
+            <div class="category">Barang</div>
+            <div class="item-name">Classic oversized hoodie</div>
+            <div class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quia.
+            </div>
+            <div>location: jambak</div>
+        </div>
+
+        <div class="button-container">
+            <button class="readmore button">Read More</button>
+        </div>
+    </div>
+</body>
+
+</html>
